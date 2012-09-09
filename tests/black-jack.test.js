@@ -3,6 +3,7 @@ var chai = require('chai'),
     assert = require('assert'),
     expect = chai.expect,
     should = chai.should(),
+    vodevil = require('vodevil'),
     Blackjack = require('../lib/black-jack');
 
 suite('Test Black Jack', function () {
@@ -35,6 +36,23 @@ suite('Test Black Jack', function () {
             expect( cardName ).to.deep.equal({
                 name: 'aces',
                 value: 1
+            });
+        });
+    });
+
+    suite('Card color', function () {
+        var cardsColors = [
+            'red',
+            'black'
+        ]; 
+
+        test( 'card color', function () {
+            vodevil.intersect( cardsColors, function ( color ) {
+                var card = new Blackjack.cardColor( color );    
+
+                expect( card ).to.deep.equal({
+                    color: color    
+                });
             });
         });
     });
