@@ -61,7 +61,7 @@ suite('Test Black Jack', function () {
         var card = new Blackjack.card(),
             cardSets = new Blackjack.card({
                 name: 'aces',
-                nipe: 'hearts',
+                suit: 'hearts',
                 value: 1,
                 color: 'red'
             });
@@ -69,7 +69,7 @@ suite('Test Black Jack', function () {
         test('new card without definitions', function () {
             expect( card ).to.deep.equal({
                 name: '',
-                nipe: '',
+                suit: '',
                 value: '',
                 color: ''
             });
@@ -78,10 +78,16 @@ suite('Test Black Jack', function () {
         test('new card with configurations', function () {
             expect( cardSets ).to.deep.equal({
                 name: 'aces',
-                nipe: 'hearts',
+                suit: 'hearts',
                 value: 1,
                 color: 'red'
             });    
         });
+    });
+
+    suite('suit', function () {
+        var suit = new Blackjack.nipe('');
+
+        test('suits object', function () {});    
     });
 });
