@@ -86,7 +86,7 @@ suite('Test Black Jack', function () {
     });
 
     suite('suit', function () {
-        var suit = new Blackjack.nipe('');
+        var suit = new Blackjack.suit('');
 
         test('suits object', function () {});    
     });
