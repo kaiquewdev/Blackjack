@@ -88,6 +88,8 @@ suite('Test Black Jack', function () {
     suite('suit', function () {
         var suit = new Blackjack.suit('');
 
-        test('suits object', function () {});    
+        test('suits object', function () {
+            expect( suit ).to.deep.equal( {} );    
+        });    
     });
 });
